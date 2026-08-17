@@ -1,0 +1,1144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Hartron Computer Institute</title>
+
+<style>
+/* =========================
+   RESET & GLOBAL
+========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #222;
+    background: #f7f9fc;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* =========================
+   HEADER
+========================= */
+header {
+    background: #ffffff;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    min-height: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+    color: #174ea6;
+}
+
+.logo span {
+    color: #ff7a00;
+}
+
+.logo small {
+    display: block;
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: #777;
+}
+
+.nav-links {
+    display: flex;
+    gap: 28px;
+    list-style: none;
+}
+
+.nav-links a {
+    color: #333;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #174ea6;
+}
+
+.menu-btn {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+/* =========================
+   HERO
+========================= */
+.hero {
+    min-height: 620px;
+    display: flex;
+    align-items: center;
+    background:
+        linear-gradient(120deg, rgba(12,50,110,0.95), rgba(29,103,190,0.82)),
+        url("https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1600&q=80")
+        center/cover;
+    color: white;
+}
+
+.hero-content {
+    max-width: 650px;
+}
+
+.hero-content .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.3);
+    padding: 8px 18px;
+    border-radius: 30px;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: clamp(40px, 6vw, 68px);
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.hero h1 span {
+    color: #ffb347;
+}
+
+.hero p {
+    font-size: 19px;
+    margin-bottom: 30px;
+    color: #eef5ff;
+}
+
+.buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 13px 25px;
+    border-radius: 8px;
+    display: inline-block;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    transition: 0.3s;
+}
+
+.btn-primary {
+    background: #ff7a00;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #e86600;
+    transform: translateY(-2px);
+}
+
+.btn-light {
+    background: white;
+    color: #174ea6;
+}
+
+.btn-light:hover {
+    transform: translateY(-2px);
+}
+
+/* =========================
+   STATS
+========================= */
+.stats {
+    background: white;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    margin-top: -45px;
+    position: relative;
+    border-radius: 15px;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.stat {
+    padding: 25px;
+    text-align: center;
+    border-right: 1px solid #eee;
+}
+
+.stat:last-child {
+    border: none;
+}
+
+.stat h2 {
+    color: #174ea6;
+    font-size: 32px;
+}
+
+.stat p {
+    color: #777;
+}
+
+/* =========================
+   SECTION
+========================= */
+section {
+    padding: 90px 0;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-title .subtitle {
+    color: #ff7a00;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.section-title h2 {
+    font-size: 40px;
+    color: #15345c;
+    margin: 8px 0;
+}
+
+.section-title p {
+    color: #777;
+    max-width: 650px;
+    margin: auto;
+}
+
+/* =========================
+   COURSES
+========================= */
+.courses {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.course-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    transition: 0.3s;
+}
+
+.course-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.13);
+}
+
+.course-image {
+    height: 190px;
+    background-size: cover;
+    background-position: center;
+}
+
+.course-content {
+    padding: 25px;
+}
+
+.course-content h3 {
+    color: #15345c;
+    margin-bottom: 10px;
+}
+
+.course-content p {
+    color: #777;
+    margin-bottom: 15px;
+}
+
+.course-content a {
+    color: #174ea6;
+    font-weight: bold;
+}
+
+/* =========================
+   ABOUT
+========================= */
+.about {
+    background: white;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.about-image {
+    min-height: 430px;
+    border-radius: 20px;
+    background:
+        url("https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1000&q=80")
+        center/cover;
+}
+
+.about-content h2 {
+    font-size: 40px;
+    color: #15345c;
+    margin-bottom: 20px;
+}
+
+.about-content p {
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.features {
+    list-style: none;
+}
+
+.features li {
+    margin: 12px 0;
+    font-weight: 600;
+}
+
+.features li::before {
+    content: "✓";
+    background: #e8f1ff;
+    color: #174ea6;
+    border-radius: 50%;
+    padding: 3px 8px;
+    margin-right: 10px;
+}
+
+/* =========================
+   WHY US
+========================= */
+.why-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.why-card {
+    background: white;
+    padding: 35px 25px;
+    border-radius: 15px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.why-card:hover {
+    transform: translateY(-6px);
+}
+
+.icon {
+    width: 65px;
+    height: 65px;
+    margin: auto auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    background: #eaf2ff;
+    font-size: 30px;
+}
+
+.why-card h3 {
+    margin-bottom: 10px;
+    color: #15345c;
+}
+
+.why-card p {
+    color: #777;
+}
+
+/* =========================
+   CTA
+========================= */
+.cta {
+    background: linear-gradient(120deg, #174ea6, #286dcc);
+    color: white;
+    text-align: center;
+}
+
+.cta h2 {
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+.cta p {
+    margin-bottom: 25px;
+}
+
+/* =========================
+   CONTACT
+========================= */
+.contact {
+    background: white;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+}
+
+.contact-info h2 {
+    color: #15345c;
+    margin-bottom: 20px;
+}
+
+.contact-item {
+    display: flex;
+    gap: 15px;
+    margin: 25px 0;
+}
+
+.contact-icon {
+    width: 45px;
+    height: 45px;
+    background: #eaf2ff;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-item h4 {
+    color: #15345c;
+}
+
+.contact-item p {
+    color: #777;
+}
+
+.contact-form {
+    background: #f7f9fc;
+    padding: 30px;
+    border-radius: 15px;
+}
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 6px;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    outline: none;
+    font-size: 15px;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    border-color: #174ea6;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+footer {
+    background: #102744;
+    color: white;
+    padding: 50px 0 20px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 40px;
+}
+
+footer h3 {
+    margin-bottom: 15px;
+}
+
+footer p {
+    color: #b9c5d5;
+}
+
+.footer-links {
+    list-style: none;
+}
+
+.footer-links li {
+    margin: 10px 0;
+}
+
+.footer-links a {
+    color: #b9c5d5;
+}
+
+.footer-links a:hover {
+    color: white;
+}
+
+.copyright {
+    text-align: center;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    margin-top: 35px;
+    padding-top: 20px;
+    color: #9eacbf;
+}
+
+/* =========================
+   BACK TO TOP
+========================= */
+#topBtn {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    width: 45px;
+    height: 45px;
+    border: none;
+    border-radius: 50%;
+    background: #ff7a00;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    display: none;
+    z-index: 999;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 900px) {
+
+    .nav-links {
+        position: absolute;
+        top: 75px;
+        left: 0;
+        width: 100%;
+        background: white;
+        flex-direction: column;
+        padding: 20px;
+        display: none;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stat:nth-child(2) {
+        border-right: none;
+    }
+
+    .courses,
+    .why-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .about-grid,
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .hero {
+        min-height: 550px;
+    }
+
+    .hero h1 {
+        font-size: 42px;
+    }
+
+    .stats-grid,
+    .courses,
+    .why-grid,
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .stat {
+        border-right: none;
+        border-bottom: 1px solid #eee;
+    }
+
+    .section-title h2,
+    .about-content h2 {
+        font-size: 32px;
+    }
+
+    .cta h2 {
+        font-size: 32px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- =========================
+     HEADER
+========================= -->
+<header>
+    <div class="container navbar">
+
+        <div class="logo">
+            HARTRON <span>COMPUTER</span>
+            <small>INSTITUTE</small>
+        </div>
+
+        <div class="menu-btn" id="menuBtn">☰</div>
+
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#courses">Courses</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#why">Why Us</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+
+    </div>
+</header>
+
+
+<!-- =========================
+     HERO
+========================= -->
+<section class="hero" id="home">
+    <div class="container">
+
+        <div class="hero-content">
+
+            <span class="tag">🎓 Learn • Grow • Succeed</span>
+
+            <h1>
+                Build Your
+                <span>Digital Future</span>
+            </h1>
+
+            <p>
+                Learn practical computer skills with professional
+                courses designed to prepare you for today's digital world.
+            </p>
+
+            <div class="buttons">
+                <a href="#courses" class="btn btn-primary">
+                    Explore Courses
+                </a>
+
+                <a href="#contact" class="btn btn-light">
+                    Contact Us
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- =========================
+     STATS
+========================= -->
+<div class="container">
+    <div class="stats">
+
+        <div class="stats-grid">
+
+            <div class="stat">
+                <h2>10+</h2>
+                <p>Courses</p>
+            </div>
+
+            <div class="stat">
+                <h2>1000+</h2>
+                <p>Students</p>
+            </div>
+
+            <div class="stat">
+                <h2>10+</h2>
+                <p>Years Experience</p>
+            </div>
+
+            <div class="stat">
+                <h2>100%</h2>
+                <p>Practical Learning</p>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+
+<!-- =========================
+     COURSES
+========================= -->
+<section id="courses">
+
+    <div class="container">
+
+        <div class="section-title">
+            <div class="subtitle">Our Courses</div>
+            <h2>Popular Computer Courses</h2>
+            <p>
+                Choose the right course and develop skills
+                that can help you build your career.
+            </p>
+        </div>
+
+        <div class="courses">
+
+            <div class="course-card">
+
+                <div class="course-image"
+                style="background-image:url('https://images.unsplash.com/photo-1516321165247-4aa89a48be28?auto=format&fit=crop&w=800&q=80');">
+                </div>
+
+                <div class="course-content">
+                    <h3>Basic Computer Course</h3>
+                    <p>
+                        Learn computer fundamentals, Windows,
+                        typing, internet and basic applications.
+                    </p>
+                    <a href="#contact">Learn More →</a>
+                </div>
+
+            </div>
+
+
+            <div class="course-card">
+
+                <div class="course-image"
+                style="background-image:url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80');">
+                </div>
+
+                <div class="course-content">
+                    <h3>Web Development</h3>
+                    <p>
+                        Learn HTML, CSS and JavaScript and
+                        create modern websites.
+                    </p>
+                    <a href="#contact">Learn More →</a>
+                </div>
+
+            </div>
+
+
+            <div class="course-card">
+
+                <div class="course-image"
+                style="background-image:url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80');">
+                </div>
+
+                <div class="course-content">
+                    <h3>Advanced Excel</h3>
+                    <p>
+                        Master formulas, functions, charts,
+                        data analysis and professional Excel.
+                    </p>
+                    <a href="#contact">Learn More →</a>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     ABOUT
+========================= -->
+<section class="about" id="about">
+
+    <div class="container">
+
+        <div class="about-grid">
+
+            <div class="about-image"></div>
+
+            <div class="about-content">
+
+                <div class="section-title" style="text-align:left;margin-bottom:20px;">
+                    <div class="subtitle">About Us</div>
+                    <h2>Learn Skills That Matter</h2>
+                </div>
+
+                <p>
+                    Hartron Computer Institute focuses on practical
+                    computer education and skill development.
+                </p>
+
+                <p>
+                    Our goal is to help students understand technology
+                    easily and develop useful skills for education,
+                    employment and everyday life.
+                </p>
+
+                <ul class="features">
+                    <li>Experienced Trainers</li>
+                    <li>Practical Computer Training</li>
+                    <li>Beginner Friendly Courses</li>
+                    <li>Career Focused Learning</li>
+                </ul>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     WHY CHOOSE US
+========================= -->
+<section id="why">
+
+    <div class="container">
+
+        <div class="section-title">
+            <div class="subtitle">Why Choose Us</div>
+            <h2>Why Hartron Computer Institute?</h2>
+        </div>
+
+        <div class="why-grid">
+
+            <div class="why-card">
+                <div class="icon">💻</div>
+                <h3>Practical Training</h3>
+                <p>
+                    Learn by doing real computer tasks and projects.
+                </p>
+            </div>
+
+            <div class="why-card">
+                <div class="icon">👨‍🏫</div>
+                <h3>Expert Guidance</h3>
+                <p>
+                    Get guidance from experienced instructors.
+                </p>
+            </div>
+
+            <div class="why-card">
+                <div class="icon">🚀</div>
+                <h3>Career Skills</h3>
+                <p>
+                    Develop skills useful for jobs and further studies.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CTA
+========================= -->
+<section class="cta">
+
+    <div class="container">
+
+        <h2>Start Learning Today!</h2>
+
+        <p>
+            Take the first step towards improving your computer skills.
+        </p>
+
+        <a href="#contact" class="btn btn-light">
+            Enroll Now
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CONTACT
+========================= -->
+<section class="contact" id="contact">
+
+    <div class="container">
+
+        <div class="section-title">
+            <div class="subtitle">Contact Us</div>
+            <h2>Get In Touch</h2>
+            <p>
+                Have a question about our courses?
+                Send us a message.
+            </p>
+        </div>
+
+        <div class="contact-grid">
+
+            <div class="contact-info">
+
+                <h2>Hartron Computer Institute</h2>
+
+                <div class="contact-item">
+                    <div class="contact-icon">📍</div>
+                    <div>
+                        <h4>Address</h4>
+                        <p>Your Institute Address, Haryana, India</p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon">📞</div>
+                    <div>
+                        <h4>Phone</h4>
+                        <p>+91 XXXXX XXXXX</p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon">✉️</div>
+                    <div>
+                        <h4>Email</h4>
+                        <p>info@yourinstitute.com</p>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <form class="contact-form" id="contactForm">
+
+                <div class="form-group">
+                    <label>Student Name</label>
+                    <input type="text" id="name"
+                           placeholder="Enter your name" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" id="email"
+                           placeholder="Enter your email" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Course</label>
+
+                    <select id="course">
+                        <option>Basic Computer</option>
+                        <option>Web Development</option>
+                        <option>Advanced Excel</option>
+                        <option>Other</option>
+                    </select>
+
+                </div>
+
+                <div class="form-group">
+                    <label>Message</label>
+
+                    <textarea id="message"
+                    placeholder="Write your message"></textarea>
+
+                </div>
+
+                <button type="submit" class="btn btn-primary">
+                    Send Enquiry
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+<footer>
+
+    <div class="container">
+
+        <div class="footer-grid">
+
+            <div>
+                <h3>Hartron Computer Institute</h3>
+
+                <p>
+                    Empowering students with practical computer
+                    skills for a better digital future.
+                </p>
+            </div>
+
+            <div>
+                <h3>Quick Links</h3>
+
+                <ul class="footer-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#courses">Courses</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h3>Courses</h3>
+
+                <ul class="footer-links">
+                    <li>Basic Computer</li>
+                    <li>Web Development</li>
+                    <li>Advanced Excel</li>
+                    <li>MS Office</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="copyright">
+            © <span id="year"></span> Hartron Computer Institute.
+            All Rights Reserved.
+        </div>
+
+    </div>
+
+</footer>
+
+
+<!-- BACK TO TOP BUTTON -->
+<button id="topBtn">↑</button>
+
+
+<script>
+
+/* =========================
+   MOBILE MENU
+========================= */
+
+const menuBtn = document.getElementById("menuBtn");
+const navLinks = document.getElementById("navLinks");
+
+menuBtn.addEventListener("click", function() {
+    navLinks.classList.toggle("active");
+});
+
+
+/* Close menu after clicking link */
+
+document.querySelectorAll(".nav-links a").forEach(function(link) {
+
+    link.addEventListener("click", function() {
+        navLinks.classList.remove("active");
+    });
+
+});
+
+
+/* =========================
+   CONTACT FORM
+========================= */
+
+document.getElementById("contactForm").addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+    const name = document.getElementById("name").value;
+
+    alert(
+        "Thank you, " + name +
+        "! Your enquiry has been submitted successfully."
+    );
+
+    this.reset();
+
+});
+
+
+/* =========================
+   CURRENT YEAR
+========================= */
+
+document.getElementById("year").textContent =
+    new Date().getFullYear();
+
+
+/* =========================
+   BACK TO TOP
+========================= */
+
+const topBtn = document.getElementById("topBtn");
+
+window.addEventListener("scroll", function() {
+
+    if (window.scrollY > 400) {
+        topBtn.style.display = "block";
+    } else {
+        topBtn.style.display = "none";
+    }
+
+});
+
+
+topBtn.addEventListener("click", function() {
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+
+});
+
+</script>
+
+</body>
+</html>
